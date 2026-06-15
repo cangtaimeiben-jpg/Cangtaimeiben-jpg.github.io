@@ -1,0 +1,315 @@
+/* ============================================
+   ヘッダー・ロゴ
+   ============================================ */
+
+header {
+  background-image: url('../images/top_logo_background.png');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.top_logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.top_logo img {
+  display: block;
+  width: 300px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+
+/* ============================================
+   ハンバーガーメニュー
+   ============================================ */
+
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+
+.gMenu .menu-icon .navicon {
+  background: #ffc107; 
+  display: block;
+  height: 2px; /* 太さ */
+  width: 31px; /* 長さ */
+  position: relative;
+  transition: background .4s ease-out; 
+}
+
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; 
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; 
+  width: 100%;
+}
+
+.gMenu .menu-icon .navicon::before {top: 10px;} 
+.gMenu .menu-icon .navicon::after {top: -10px;} 
+
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height .6s; 
+  text-align: center;
+  
+  /* ここから下の3行を追加 */
+  list-style: none;     /* 箇条書きの黒丸を消す */
+  padding: 0;           /* デフォルトの余白を消す */
+  margin: 0;            /* デフォルトの余白を消す */
+}
+
+.gMenu .menu li {
+  width: 100%;
+  text-align: center;   /* 文字を中央に揃える */
+}
+
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;        /* 追加 */
+  color: #333333;         /* 追加 */
+  font-family: inherit;   /* 追加 */
+}
+
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+
+.gMenu .menu-btn {
+  display: none;
+}
+
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; 
+  transition: max-height .6s;
+}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}
+
+.gMenu .menu-icon {
+  top: 26px;
+}
+
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #333333;
+}
+
+
+/* ============================================
+   メイン・パンくず
+   ============================================ */
+
+main {
+  padding-top: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  background-image: url('../images/back_ground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  color: #b58b3a;
+  padding-left: 15px;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #777;
+}
+
+
+/* ============================================
+   画像スライダー
+   ============================================ */
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.slider-window {
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 40vw;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 12px;
+}
+
+/* 前へ・次へボタン */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ドット */
+.dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+
+/* ============================================
+   フッター
+   ============================================ */
+
+.ft {
+  background: #111;
+  color: #ccc;
+  padding: 2.5rem 2rem 1.5rem;
+  background-attachment: fixed;
+}
+
+.ft-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid #333;
+  padding-bottom: 1.5rem;
+}
+
+.ft-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.ft-nav a:hover { color: #fff; }
+
+.ft-address {
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.ft-logo img {
+  width: 200px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+
+.ft-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ft-logo-text {
+  font-size: 22px;
+  color: #e8d5a3;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.ft-copy {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  border-top: 0.5px solid #2a2a2a;
+  padding-top: 1rem;
+}

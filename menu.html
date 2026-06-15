@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <!-- スマホでも画面を整える -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="css/menu.css">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+        <!-- 画像のファイル形式が 「png」の場合 -->
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <title>Harvest Restaurant</title>
+    </head>
+
+    <body class="topPage">
+        <header>    
+            <h1 class="top_logo">
+                <img src="images/top_logo.png" alt="Harvest Restaurant">
+            </h1>
+            
+            <nav class="gMenu">
+                <input class="menu-btn" type="checkbox" id="menu-btn">
+                <label class="menu-icon" for="menu-btn">
+                    <span class="navicon"></span>
+                </label>
+                
+                <ul class="menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="access.html">アクセス</a></li>
+                    <li><a href="reservation.html">予約</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <p class="breadcrumb">
+                <a href="index.html">ホーム</a>
+                <span> ＞ </span>
+                メニュー
+            </p>
+        
+            <!-- セットメニュー -->
+            <section class="menu-section">
+                <h2 class="section-title">SET MENU</h2>
+                <p class="section-subtitle">メイン・サラダ・スープ・パン or ライス付き</p>
+
+                <!-- 平日限定バナー -->
+                <a href="product_html/weekday.html" class="weekday-banner fade-in-up">
+                    <div class="weekday-banner-left">
+                        <span class="weekday-badge-corner">月曜日〜金曜日限定（祝日を除く）</span>
+                        <p class="weekday-banner-label"><br>Weekday Set Menu</p>
+                        <p class="weekday-banner-title">平日限定セットメニュー</p>
+                        <p class="weekday-banner-desc"><br>～平日だけの特別なセット。　ちょっと贅沢なランチタイムを。～</p>
+                        <div class="weekday-banner-price-row">
+                            <span class="weekday-banner-tag">　　価格　　</span>
+                            <span class="weekday-banner-price">1,000</span>
+                            <span class="weekday-banner-yen">円 <span class="menu-price-sub">（税込）</span></span>
+                        </div>
+                    
+                        <div class="weekday-banner-includes">
+                            <div class="weekday-include-item"><span class="icon">🥩</span>平日限定の<br>肉料理</div>
+                            <div class="weekday-include-item"><span class="icon">🍵</span>コンソメ<br>スープ</div>
+                            <div class="weekday-include-item"><span class="icon">🥗</span>サラダ</div>
+                            <div class="weekday-include-item"><span class="icon">🍞</span>パン<br>2切れ</div>
+                        </div>
+                    </div>
+
+                    <div class="weekday-banner-right">
+                        <img src="images/menu/Set_Menu/Limited_Set.png" alt="平日限定セット">
+                    </div>
+                </a>
+
+                <!-- セットメニューカード -->
+                <div class="menu-grid fade-in-up">
+
+                    <!-- グラタンセット（人気No.1） -->
+                    <a href="product_html/gratin.html" class="menu-card top">
+                        <img src="images/menu/Set_Menu/Gratin_Set.png" alt="グラタンセット" class="menu-img">
+                        <div class="menu-card-body">
+                            <span class="badge badge-popular">当店人気 No.1</span>
+                            <p class="menu-name">グラタンセット</p>
+                            <p class="menu-desc">当店自慢「人気No.1」のグラタンです。<br>サラダ・スープ・パン or ライス付き</p>
+                            <p class="menu-price">¥1,750　円 <span class="menu-price-sub">（税込）</span></p>
+                        </div>
+                    </a>
+
+                    <!-- ビーフシチューセット -->
+                    <a href="product_html/beef_stew.html" class="menu-card">
+                        <img src="images/menu/Set_Menu/Beef_Stew_Set.png" alt="ビーフシチューセット" class="menu-img">
+                        <div class="menu-card-body">
+                            <span class="badge badge-standard">定番メニュー</span>
+                            <p class="menu-name">ビーフシチューセット</p>
+                            <p class="menu-desc">じっくり煮込んだ柔らかいビーフシチューです。<br>サラダ・スープ・パン or ライス付き</p>
+                            <p class="menu-price">¥1,250　円 <span class="menu-price-sub">（税込）</span></p>
+                        </div>
+                    </a>
+
+                    <!-- チキングリルセット -->
+                    <a href="product_html/chicken.html" class="menu-card">
+                        <img src="images/menu/Set_Menu/Grilled_Chicken_Set.png" alt="チキングリルセット" class="menu-img">
+                        <div class="menu-card-body">
+                            <span class="badge badge-standard">定番メニュー</span>
+                            <p class="menu-name">チキングリルセット</p>
+                            <p class="menu-desc">ジューシーなハーブチキンです。<br>サラダ・スープ・パン or ライス付き</p>
+                            <p class="menu-price">¥1,250　円 <span class="menu-price-sub">（税込）</span></p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 単品メニュー -->
+            <section class="menu-section">
+                <h2 class="section-title">SIDE MENU</h2>
+                <p class="section-subtitle">※セットメニューを注文したうえで、<br>お選びいただけます。</p>
+                
+                <!-- セットメニューカード -->
+                <div class="menu-grid fade-in-up">
+
+                    <!--「サラダ１」-->
+                    <a href="product_html/Bonito_Salad.html" class="menu-card featured">
+                        <img src="images/menu/Salad/Bonito_Salad.png" alt="かつお香る和風サラダ" class="menu-img">
+                        <div class="menu-card-body">
+                            <span class="badge badge-popular">和風サラダ</span>
+                            <p class="menu-name">かつお香る和風サラダ</p>
+                            <p class="menu-desc">女性に人気なサラダです。</p>
+                            <p class="menu-price">¥380　円 <span class="menu-price-sub">（税込）</span></p>
+                        </div>
+                    </a>
+
+                    <!--「サラダ２」-->
+                    <a href="product_html/Mediterranean_Salad.html" class="menu-card featured">
+                        <img src="images/menu/Salad/Mediterranean_Salad.png" alt="地中海風サラダ" class="menu-img">
+                        <div class="menu-card-body">
+                            <span class="badge badge-popular">洋風サラダ</span>
+                            <p class="menu-name">地中海風サラダ</p>
+                            <p class="menu-desc">当店新作のサラダです。</p>
+                            <p class="menu-price">¥380　円 <span class="menu-price-sub">（税込）</span></p>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+            <script src="script/menu.js"></script>
+
+            <footer class="ft">
+                <nav class="ft-nav">
+                    <a href="index.html">ホーム</a>
+                    <a href="access.html">アクセス</a>
+                    <a href="reservation.html">予約</a>
+                </nav>
+                <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
+                <div class="ft-logo">
+                    <img src="images/bottom_logo.png" alt="Harvest Restaurant">
+                </div>
+                <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
+            </footer>
+        </main>
+    </body>
+</html>

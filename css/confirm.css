@@ -1,0 +1,461 @@
+/* ============================================
+   ヘッダー・ロゴ
+   ============================================ */
+
+header {
+  background-image: url('../images/top_logo_background.png');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.top_logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.top_logo img {
+  display: block;
+  width: 300px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+
+/* ============================================
+   ハンバーガーメニュー
+   ============================================ */
+
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+
+.gMenu .menu-icon .navicon {
+  background: #ffc107; 
+  display: block;
+  height: 2px; /* 太さ */
+  width: 31px; /* 長さ */
+  position: relative;
+  transition: background .4s ease-out; 
+}
+
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; 
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; 
+  width: 100%;
+}
+
+.gMenu .menu-icon .navicon::before {top: 10px;} 
+.gMenu .menu-icon .navicon::after {top: -10px;} 
+
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height .6s; 
+  text-align: center;
+  
+  /* ここから下の3行を追加 */
+  list-style: none;     /* 箇条書きの黒丸を消す */
+  padding: 0;           /* デフォルトの余白を消す */
+  margin: 0;            /* デフォルトの余白を消す */
+}
+
+.gMenu .menu li {
+  width: 100%;
+  text-align: center;   /* 文字を中央に揃える */
+}
+
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;        /* 追加 */
+  color: #333333;         /* 追加 */
+  font-family: inherit;   /* 追加 */
+}
+
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+
+.gMenu .menu-btn {
+  display: none;
+}
+
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; 
+  transition: max-height .6s;
+}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}
+
+.gMenu .menu-icon {
+  top: 26px;
+}
+
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #333333;
+}
+
+
+/* ============================================
+   メイン・パンくず
+   ============================================ */
+
+main {
+  padding-top: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  background-image: url('../images/back_ground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  color: #b58b3a;
+  padding-left: 15px;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #777;
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+
+.ft {
+  background: #111;
+  color: #ccc;
+  padding: 2.5rem 2rem 1.5rem;
+  background-attachment: fixed;
+}
+
+.ft-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid #333;
+  padding-bottom: 1.5rem;
+}
+
+.ft-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.ft-nav a:hover { color: #fff; }
+
+.ft-address {
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.ft-logo img {
+  width: 200px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+
+.ft-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ft-logo-text {
+  font-size: 22px;
+  color: #e8d5a3;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.ft-copy {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  border-top: 0.5px solid #2a2a2a;
+  padding-top: 1rem;
+}
+
+/* ============================================
+   予約確認ページ（confirm.html）
+   ============================================ */
+
+.confirm-section {
+    max-width: 520px;
+    margin: 32px auto 64px;
+    padding: 0 16px;
+}
+
+.confirm-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.10);
+    padding: 36px 32px 32px;
+}
+
+.confirm-card h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #3e2a0e;
+    margin: 0 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #c9a84c;
+}
+
+/* ローディング */
+.loading-wrap {
+    text-align: center;
+    padding: 24px 0 8px;
+    color: #888;
+    font-size: .95rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e0d0b0;
+    border-top-color: #c9a84c;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    margin: 0 auto 14px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* エラー */
+.error-box {
+    background: #fff5f5;
+    border: 1.5px solid #e57373;
+    border-radius: 10px;
+    padding: 22px 20px;
+    color: #b71c1c;
+    line-height: 1.8;
+    font-size: .97rem;
+}
+
+.error-box .error-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 確認テーブル */
+.confirm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+}
+
+.confirm-table th,
+.confirm-table td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #f0e8d6;
+    text-align: left;
+    font-size: .97rem;
+}
+
+.confirm-table th {
+    color: #888;
+    font-weight: 600;
+    width: 110px;
+    white-space: nowrap;
+}
+
+.confirm-table td {
+    color: #3e2a0e;
+    font-weight: 500;
+}
+
+.confirm-table tr:last-child th,
+.confirm-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* 予約番号 */
+.reservation-num {
+    background: #fdf6e3;
+    border: 1.5px solid #c9a84c;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 28px;
+    font-size: .92rem;
+    color: #7a5c1e;
+}
+
+.reservation-num span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #c9a84c;
+    letter-spacing: .08em;
+}
+
+/* ボタン */
+.confirm-btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-back {
+    flex: 1;
+    padding: 13px 0;
+    border: 2px solid #c9a84c;
+    border-radius: 8px;
+    background: #fff;
+    color: #c9a84c;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.btn-back:hover {
+    background: #fdf6e3;
+}
+
+.btn-confirm {
+    flex: 2;
+    padding: 13px 0;
+    border: none;
+    border-radius: 8px;
+    background: #c9a84c;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.btn-confirm:hover:not(:disabled) {
+    background: #b8963e;
+}
+
+.btn-confirm:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+.btn-back-only {
+    width: 100%;
+    padding: 13px 0;
+    border: 2px solid #c9a84c;
+    border-radius: 8px;
+    background: #fff;
+    color: #c9a84c;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.btn-back-only:hover {
+    background: #fdf6e3;
+}
+
+/* 完了画面 */
+.success-box {
+    text-align: center;
+    padding: 8px 0 4px;
+}
+
+.success-box .success-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.success-box p {
+    color: #3e2a0e;
+    font-size: .97rem;
+    line-height: 1.8;
+    margin: 0 0 24px;
+}
+
+/* QRコード */
+.qr-wrap {
+    text-align: center;
+    margin: 24px 0 0;
+    padding: 20px 0 16px;
+    border-top: 1px solid #f0e8d6;
+    border-bottom: 1px solid #f0e8d6;
+}
+
+.qr-label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: #888;
+    letter-spacing: .06em;
+    margin: 0 0 12px;
+}
+
+#qrcode {
+    display: inline-block;
+    padding: 10px;
+    background: #fff;
+    border: 1.5px solid #e0d0b0;
+    border-radius: 8px;
+}
+
+#qrcode img,
+#qrcode canvas {
+    display: block;
+}
+
+.qr-sub {
+    font-size: .82rem;
+    color: #aaa;
+    margin: 12px 0 0;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="css/reservation.css">
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <title>Harvest Restaurant</title>
+    </head>
+
+    <body>
+        <!-- ===== ローディング画面 ===== -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="loading-content">
+
+                <!-- 飾り線 -->
+                <div class="loading-ornament">
+                    <div class="loading-ornament-line"></div>
+                    <div class="loading-ornament-diamond"></div>
+                    <div class="loading-ornament-line right"></div>
+                </div>
+
+                <!-- レストラン名 -->
+                <p class="loading-restaurant-name">Harvest</p>
+                <p class="loading-restaurant-sub">Restaurant</p>
+
+                <!-- ドットプログレス -->
+                <div class="loading-dots-row">
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                </div>
+
+                <p class="loading-text">Loading now</p>
+            </div>
+        </div>
+
+        <!-- ===== 共通ヘッダー（index.htmlと同じ） ===== -->
+        <header>
+            <h1 class="top_logo">
+                <img src="images/top_logo.png" alt="Harvest Restaurant">
+            </h1>
+
+            <nav class="gMenu">
+                <input class="menu-btn" type="checkbox" id="menu-btn">
+                <label class="menu-icon" for="menu-btn">
+                    <span class="navicon"></span>
+                </label>
+
+                <ul class="menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="menu.html">メニュー</a></li>
+                    <li><a href="reservation.html">アクセス</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ===== メイン ===== -->
+        <main>
+            <p class="breadcrumb">
+                <a href="index.html">ホーム</a>
+                ＞ 予約
+            </p>
+
+            <section class="reservation-section">
+                <p class="today-date" id="todayDate">（本日）現在の予約状況</p>
+                <p class="subtitle">席をクリックして予約・確認ができます</p>
+
+                <!-- サマリー -->
+                <div class="summary-row">
+                    <div class="stat-card">
+                        <div class="stat-num green" id="cnt-available">0</div>
+                        <div class="stat-label">空席</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num red" id="cnt-reserved">0</div>
+                        <div class="stat-label">予約済</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num gray" id="cnt-total">0</div>
+                        <div class="stat-label">総席数</div>
+                    </div>
+                </div>
+
+                <!-- 凡例 -->
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background:#81c784;"></div>空席
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background:#e57373;"></div>予約済
+                    </div>
+                </div>
+
+                <button class="reset-btn" onclick="resetAll()">&#x21ba; 予約を全てリセット</button>
+
+                <!-- 席グリッド -->
+                <div class="seat-grid" id="seatGrid"></div>
+            </section>
+        </main>
+
+        <!-- ===== モーダル ===== -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-box">
+                <h3 id="modalTitle">予約する</h3>
+
+                <!-- 予約フォーム -->
+                <div id="formArea">
+                    <label>氏名</label>
+                    <input type="text" id="inputName" placeholder="山田 花子">
+                    <label>人数</label>
+                    <select id="inputPax"></select>
+                    <label>時間帯</label>
+                    <select id="inputTime">
+                        <option>12:00 〜 13:00</option>
+                        <option>13:30 〜 14:30</option>
+                        <option>15:00 〜 16:00</option>
+                        <option>18:00 〜 19:00</option>
+                        <option>19:30 〜 20:30</option>
+                    </select>
+                    <div class="btn-row">
+                        <button class="btn-secondary" onclick="closeModal()">キャンセル</button>
+                        <button class="btn-primary" onclick="confirmReserve()">予約</button>
+                    </div>
+                </div>
+
+                <!-- 予約情報表示 -->
+                <div id="infoArea" style="display:none;">
+                    <div class="modal-info-text" id="infoText"></div>
+                    <button class="btn-secondary" style="width:100%;" onclick="closeModal()">閉じる</button>
+                    <button class="btn-release" onclick="releaseReservation()">&#x2715; キャンセルする</button>
+                </div>
+            </div>
+        </div>
+        <script src="script/reservation.js"></script>
+
+        <footer class="ft">
+            <nav class="ft-nav">
+                <a href="index.html">ホーム</a>
+                <a href="menu.html">メニュー</a>
+                <a href="access.html">アクセス</a>
+            </nav>
+            <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
+            <div class="ft-logo">
+                <img src="images/bottom_logo.png" alt="Harvest Restaurant">
+            </div>
+            <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

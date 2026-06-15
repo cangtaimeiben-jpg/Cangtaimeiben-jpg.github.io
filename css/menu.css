@@ -1,0 +1,525 @@
+/* ============================================
+   ヘッダー・ロゴ
+   ============================================ */
+
+header {
+  background-image: url('../images/top_logo_background.png');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.top_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  text-align: center;
+  width: 100%;
+}
+
+.top_logo img {
+  display: block;
+  width: 300px;
+  height: 100px;
+  /* ロゴ画像の白背景を透過させる */
+  mix-blend-mode: multiply;
+}
+
+
+/* ============================================
+   ハンバーガーメニュー
+   ============================================ */
+
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+
+.gMenu .menu-icon .navicon {
+  background: #ffc107; 
+  display: block;
+  height: 2px; /* 太さ */
+  width: 31px; /* 長さ */
+  position: relative;
+  transition: background .4s ease-out; 
+}
+
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; 
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; 
+  width: 100%;
+}
+
+.gMenu .menu-icon .navicon::before {top: 10px;} 
+.gMenu .menu-icon .navicon::after {top: -10px;} 
+
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height .6s; 
+  text-align: center;
+  
+  /* ここから下の3行を追加 */
+  list-style: none;     /* 箇条書きの黒丸を消す */
+  padding: 0;           /* デフォルトの余白を消す */
+  margin: 0;            /* デフォルトの余白を消す */
+}
+
+.gMenu .menu li {
+  width: 100%;
+  text-align: center;   /* 文字を中央に揃える */
+}
+
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;        /* 追加 */
+  color: #333333;         /* 追加 */
+  font-family: inherit;   /* 追加 */
+}
+
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+
+.gMenu .menu-btn {
+  display: none;
+}
+
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; 
+  transition: max-height .6s;
+}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}
+
+.gMenu .menu-icon {
+  top: 26px;
+}
+
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #333333;
+}
+
+/* ============================================
+   メイン・パンくず
+   ============================================ */
+
+main {
+  padding-top: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  background-image: url('../images/back_ground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  color: #6b4c1e;
+  padding-left: 15px;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.7);
+}
+
+.breadcrumb a {
+  color: #4a3a2a;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #4a3a2a;
+}
+
+/* ============================================
+   セクションタイトル・サブタイトル
+   ============================================ */
+
+.menu-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'Righteous', 'Noto Sans JP', sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 2rem 0 0;
+  padding-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Righteous', 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  color: #1a1a1a;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin: 0 0 1.5rem;
+  padding-bottom: 15px;
+  border-bottom: 5px solid #c8dbb0;
+}
+
+/* ============================================
+   平日限定バナー
+   ============================================ */
+
+.weekday-banner {
+  display: flex;
+  align-items: stretch;
+  min-height: 160px;
+  background: #f5f0e8;
+  border: 1.5px solid #110e06;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 15px 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.weekday-banner-left {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weekday-badge-corner {
+  display: inline-block;
+  background: #2d4a2d;
+  color: #c8dbb0;
+  font-size: 15px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.weekday-banner-label {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #6b5a3e;
+  margin-bottom: 4px;
+}
+
+.weekday-banner-title {
+  font-size: 35px;
+  font-weight: 500;
+  color: #3a2e1e;
+  margin: 0 0 6px;
+}
+
+.weekday-banner-desc {
+  font-size: 13px;
+  color: #7a6a50;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.weekday-banner-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weekday-banner-tag {
+  background: #3C3419;
+  color: #FAC775;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.weekday-banner-price {
+  font-size: 28px;
+  font-weight: 500;
+  color: #3a2e1e;
+}
+
+.weekday-banner-yen {
+  font-size: 16px;
+  color: #7a6a50;
+}
+
+.weekday-banner-includes {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  border: 1.5px solid #e0e0e0;
+  padding: 12px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.weekday-include-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #7a6a50;
+  text-align: center;
+}
+
+.weekday-include-item .icon {
+  font-size: 22px;
+}
+
+.weekday-banner-right {
+  width: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.weekday-banner-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ============================================
+   スマホ対応（600px以下）― 平日限定バナーのみ
+   ============================================ */
+
+@media (max-width: 600px) {
+
+  /* 横並び → 縦並びに切り替え（テキスト上・画像下） */
+  .weekday-banner {
+    flex-direction: column;
+  }
+
+  /* テキストエリア：幅を100%に広げる */
+  .weekday-banner-left {
+    width: 100%;
+  }
+
+  /* 画像エリア：幅を100%・高さを固定して縦伸びを防ぐ */
+  .weekday-banner-right {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  /* アイコン行（🥩🍵🥗🍞）が溢れないよう折り返し */
+  .weekday-banner-includes {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+
+/* ============================================
+   メニューカードグリッド
+   ============================================ */
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 0 15px 2.5rem;
+}
+
+.menu-card {
+  width: calc(33.333% - 1rem);
+  min-width: 200px;
+  max-width: 300px;
+  background: #f4f4f4;
+  border: 1.5px solid #0a0707;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu-card.top {
+  border: 2px solid #0F6E56;
+}
+
+a.menu-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card-body {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.menu-card.featured .menu-card-body {
+  background-color: #fff5ee;
+}
+
+.menu-card.featured .menu-name,
+.menu-card.featured .menu-price {
+  color: #0a0707;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.badge-popular {
+  background: #D4AF37;
+  color: #0a0707;
+}
+
+.badge-standard {
+  background: #FFF3E0;
+  color: #0a0707;
+}
+
+.menu-name {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.menu-desc {
+  font-size: 12px;
+  color: #0a0707;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.menu-price {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu-price-sub {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+
+/* ============================================
+   フェードインアニメーション
+   ============================================ */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+
+.ft {
+  background: #111;
+  color: #ccc;
+  padding: 2.5rem 2rem 1.5rem;
+  background-attachment: fixed;
+}
+
+.ft-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid #333;
+  padding-bottom: 1.5rem;
+}
+
+.ft-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.ft-nav a:hover { color: #fff; }
+
+.ft-address {
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.ft-logo img {
+  width: 200px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+
+.ft-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ft-logo-text {
+  font-size: 22px;
+  color: #e8d5a3;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.ft-copy {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  border-top: 0.5px solid #2a2a2a;
+  padding-top: 1rem;
+}
