@@ -199,4 +199,39 @@ async function loadReservations() {
     hideLoading();
 }
 
-loadReservations();
+/* ============================================
+   日付チェック＆自動リセット
+   ============================================ */
+
+function getTodayString() {
+    const d = new Date();
+    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+}
+
+async function checkDateAndReset() {
+    const today = getTodayString();
+    const lastDate = localStorage.getItem('reservationDate');
+
+    if (lastDate && lastDate !== today) {
+        // 日付が変わっていたらサーバー側もリセット
+        try {
+            await fetch(GAS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({ action: 'reset' })
+            });
+        } catch(e) {
+            console.error('自動リセット失敗', e);
+        }
+    }
+
+    // 今日の日付を保存
+    localStorage.setItem('reservationDate', today);
+}
+
+async function init() {
+    await checkDateAndReset();
+    await loadReservations();
+}
+
+init();
