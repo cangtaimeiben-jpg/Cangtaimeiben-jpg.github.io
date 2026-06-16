@@ -323,26 +323,57 @@ main {
    スマホ対応（600px以下）― 平日限定バナーのみ
    ============================================ */
 
+/* スマホのみ表示するbrタグ（デスクトップでは非表示） */
+br.sp-only { display: none; }
+
 @media (max-width: 600px) {
 
-  /* 横並び → 縦並びに切り替え（テキスト上・画像下） */
+  /* スマホのみbrを有効にする */
+  br.sp-only { display: inline; }
+
+  /* バナー全体：縦並び・画面幅に収める */
   .weekday-banner {
     flex-direction: column;
+    margin: 0 0 1.5rem;
+    border-radius: 8px;
+    box-sizing: border-box;
   }
 
-  /* テキストエリア：幅を100%に広げる */
+  /* テキストエリア：幅を100%に */
   .weekday-banner-left {
     width: 100%;
+    box-sizing: border-box;
   }
 
-  /* 画像エリア：幅を100%・高さを固定して縦伸びを防ぐ */
+  /* 画像エリア */
   .weekday-banner-right {
     width: 100%;
     height: 220px;
     flex-shrink: 0;
   }
 
-  /* アイコン行（🥩🍵🥗🍞）が溢れないよう折り返し */
+  /* ①緑バッジ：2行に折り返す */
+  .weekday-badge-corner {
+    font-size: 12px;
+    white-space: normal;
+    word-break: keep-all;
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ②タイトル：フォントサイズを縮小して収める */
+  .weekday-banner-title {
+    font-size: 24px;
+  }
+
+  /* 価格行：崩れないようにする */
+  .weekday-banner-price-row {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  /* アイコン行：折り返し */
   .weekday-banner-includes {
     flex-wrap: wrap;
     gap: 0.75rem;
