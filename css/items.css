@@ -605,4 +605,22 @@ main {
   .allergy-table {
     width: 100%;   /* スマホは全幅 */
   }
+
+  /* フッターナビを縦並びに */
+  .ft-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .ft-nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid #222;
+  }
+
+  .ft-nav a:last-child {
+    border-bottom: none;
+  }
 }
