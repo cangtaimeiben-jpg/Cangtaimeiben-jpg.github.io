@@ -2,12 +2,10 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <!-- スマホでも画面を整える -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="../css/index.css">
-        <!-- 画像のファイル形式が 「png」の場合 -->
+        <link rel="stylesheet" href="../css/items.css">
         <link rel="icon" href="../images/favicon.png" type="image/png">
-        <title>Harvest Restaurant</title>
+        <title>ビーフシチューセット | Harvest Restaurant</title>
     </head>
 
     <body class="topPage">
@@ -34,15 +32,99 @@
         <main>
             <p class="breadcrumb">
                 <a href="../index.html">ホーム</a>
-                <span> ＞</span>
+                <span> ＞ </span>
                 <a href="../menu.html">メニュー</a>
-                <span> ＞</span>
+                <span> ＞ </span>
                 ビーフシチューセット
             </p>
-            
-            <p class="breadcrumb">
-                アレルギーについて
-            </p>
+
+            <!-- メインビジュアル -->
+            <section class="item-hero fade-in-up">
+                <div class="item-hero-img-wrap">
+                    <img src="../images/menu/Set_Menu/Beef_Stew_Set.png" alt="ビーフシチューセット" class="item-hero-img" loading="lazy">
+                </div>
+                <div class="item-hero-body">
+                    <p class="item-hero-en">Beef Stew Set</p>
+                    <h2 class="item-hero-title">ビーフシチューセット</h2>
+                    <p class="item-hero-badge item-hero-badge--standard">定番メニュー</p>
+                    <p class="item-hero-desc">じっくり煮込んだ柔らかいビーフシチューです。<br>サラダ・スープ・パン or ライス付き</p>
+                    <p class="item-hero-price"><span class="item-hero-price-num">1,250</span> 円<span class="item-hero-price-sub">（税込）</span></p>
+                </div>
+            </section>
+
+            <!-- こだわり紹介 -->
+            <section class="item-story fade-in-up">
+                <h3 class="item-story-title">— このシチューへの、こだわり —</h3>
+                <div class="item-story-grid">
+                    <div class="item-story-card fade-in-up delay-1">
+                        <p class="item-story-card-icon">🥩</p>
+                        <h4 class="item-story-card-title">じっくり煮込んだ柔らか牛肉</h4>
+                        <p class="item-story-card-text">厳選した牛肉を数時間かけてじっくり煮込みます。繊維がほぐれるほど柔らかく仕上げるのが、このシチューの最大のこだわりです。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-2">
+                        <p class="item-story-card-icon">🍷</p>
+                        <h4 class="item-story-card-title">赤ワインで深みを出したソース</h4>
+                        <p class="item-story-card-text">ソースには赤ワインをたっぷり使用。長時間煮詰めることで、アルコールを飛ばしながら芳醇なコクと深みを引き出しています。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-3">
+                        <p class="item-story-card-icon">🥕</p>
+                        <h4 class="item-story-card-title">旬の根菜をたっぷりと</h4>
+                        <p class="item-story-card-text">にんじん・じゃがいも・玉ねぎなど、旬の根菜をゴロゴロと入れています。野菜の甘みがソースに溶け込み、一体感のある味わいに仕上げます。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-4">
+                        <p class="item-story-card-icon">🍽️</p>
+                        <h4 class="item-story-card-title">パン or ライスが選べる</h4>
+                        <p class="item-story-card-text">シチューに合わせて、焼きたてパンかライスをお選びいただけます。どちらもソースとの相性は抜群です。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アレルギー表 -->
+            <section class="item-allergy fade-in-up">
+                <h3 class="item-allergy-title">アレルギー情報</h3>
+                <table class="allergy-table">
+                    <thead>
+                        <tr>
+                            <th>メニュー</th>
+                            <th>小麦</th>
+                            <th>牛肉</th>
+                            <th>鶏肉</th>
+                            <th>乳</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ビーフシチュー</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                        </tr>
+                        <tr>
+                            <td>スープ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>サラダ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>パン</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="allergy-note">● 含む　― 含まない</p>
+                <p class="allergy-caution">※アレルギーがある方はスタッフにお申し付けください。</p>
+            </section>
 
             <footer class="ft">
                 <nav class="ft-nav">
@@ -58,5 +140,6 @@
                 <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
             </footer>
         </main>
+        <script src="../script/items.js"></script>
     </body>
 </html>
