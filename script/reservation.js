@@ -37,7 +37,7 @@ function render() {
 
     const today = new Date();
     document.getElementById('todayDate').textContent =
-        `（本日）${today.getMonth() + 1}月${today.getDate()}日現在の予約状況`;
+        `${today.getMonth() + 1}月${today.getDate()}日現在`;
 
     SEATS.forEach(s => {
         const r = reservations[s.id];
