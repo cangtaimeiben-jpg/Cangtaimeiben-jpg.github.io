@@ -2,12 +2,8 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <!-- スマホでも画面を整える -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/menu.css">
-
-        <!-- 画像のファイル形式が 「png」の場合 -->
+        <link rel="stylesheet" href="../css/items.css">
         <link rel="icon" href="../images/favicon.png" type="image/png">
         <title>Harvest Restaurant</title>
     </head>
@@ -36,11 +32,110 @@
         <main>
             <p class="breadcrumb">
                 <a href="../index.html">ホーム</a>
-                <span> ＞</span>
+                <span> ＞ </span>
                 <a href="../menu.html">メニュー</a>
-                <span> ＞</span>
+                <span> ＞ </span>
                 グラタンセット
             </p>
+
+            <!-- メインビジュアル -->
+            <section class="item-hero fade-in-up">
+                <div class="item-hero-img-wrap">
+                    <img src="../images/menu/Set_Menu/Gratin_Set.png" alt="グラタンセット" class="item-hero-img" loading="lazy">
+                </div>
+                <div class="item-hero-body">
+                    <p class="item-hero-en">Gratin Set</p>
+                    <h2 class="item-hero-title">グラタンセット</h2>
+                    <p class="item-hero-badge">当店人気 No.1</p>
+                    <p class="item-hero-desc">当店自慢「人気No.1」のグラタンです。<br>サラダ・スープ・パン or ライス付き</p>
+                    <p class="item-hero-price"><span class="item-hero-price-num">1,750</span> 円<span class="item-hero-price-sub">（税込）</span></p>
+                </div>
+            </section>
+
+            <!-- こだわり紹介 -->
+            <section class="item-story fade-in-up">
+                <h3 class="item-story-title">— このグラタンへの、こだわり —</h3>
+                <div class="item-story-grid">
+                    <div class="item-story-card fade-in-up delay-1">
+                        <p class="item-story-card-icon">🧀</p>
+                        <h4 class="item-story-card-title">とろけるチーズの黄金比</h4>
+                        <p class="item-story-card-text">数種類のチーズをブレンドし、焼き上がりのとろみと香ばしさを両立。表面のきつね色がおいしさのサインです。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-2">
+                        <p class="item-story-card-icon">🥛</p>
+                        <h4 class="item-story-card-title">手作りベシャメルソース</h4>
+                        <p class="item-story-card-text">ルーから丁寧に仕込むベシャメルソースは毎日手作り。市販品は使わず、なめらかなコクのある仕上がりにこだわっています。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-3">
+                        <p class="item-story-card-icon">🍽️</p>
+                        <h4 class="item-story-card-title">パン or ライスが選べる</h4>
+                        <p class="item-story-card-text">グラタンに合わせて、焼きたてパンかライスをお選びいただけます。どちらもソースとの相性抜群です。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-4">
+                        <p class="item-story-card-icon">🥗</p>
+                        <h4 class="item-story-card-title">サラダ・スープもセットで</h4>
+                        <p class="item-story-card-text">旬の野菜を使ったサラダと、その日のスープが付いたフルセット。グラタン一皿でバランスのよい食事が楽しめます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アレルギー表 -->
+            <section class="item-allergy fade-in-up">
+                <h3 class="item-allergy-title">アレルギー情報</h3>
+                <table class="allergy-table">
+                    <thead>
+                        <tr>
+                            <th>メニュー</th>
+                            <th>小麦</th>
+                            <th>乳</th>
+                            <th>卵</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>グラタン</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                        </tr>
+                        <tr>
+                            <td>スープ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>サラダ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>パン</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="allergy-note">● 含む　― 含まない</p>
+                <p class="allergy-caution">※アレルギーがある方はスタッフにお申し付けください。</p>
+            </section>
+
+            <footer class="ft">
+                <nav class="ft-nav">
+                    <a href="../index.html">ホーム</a>
+                    <a href="../menu.html">メニュー</a>
+                    <a href="../access.html">アクセス</a>
+                    <a href="../reservation.html">予約</a>
+                </nav>
+                <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
+                <div class="ft-logo">
+                    <img src="../images/bottom_logo.png" alt="Harvest Restaurant">
+                </div>
+                <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
+            </footer>
         </main>
+        <script src="../script/items.js"></script>
     </body>
 </html>
