@@ -2,14 +2,10 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <!-- スマホでも画面を整える -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/menu.css">
-
-        <!-- 画像のファイル形式が 「png」の場合 -->
+        <link rel="stylesheet" href="../css/items.css">
         <link rel="icon" href="../images/favicon.png" type="image/png">
-        <title>Harvest Restaurant</title>
+        <title>チキングリルセット | Harvest Restaurant</title>
     </head>
 
     <body class="topPage">
@@ -36,15 +32,110 @@
         <main>
             <p class="breadcrumb">
                 <a href="../index.html">ホーム</a>
-                <span> ＞</span>
+                <span> ＞ </span>
                 <a href="../menu.html">メニュー</a>
-                <span> ＞</span>
+                <span> ＞ </span>
                 チキングリルセット
             </p>
 
-            <section class="menu-section">
-                <h2 class="section-title">アレルギーについて</h2>
+            <!-- メインビジュアル -->
+            <section class="item-hero fade-in-up">
+                <div class="item-hero-img-wrap">
+                    <img src="../images/menu/Set_Menu/Grilled_Chicken_Set.png" alt="チキングリルセット" class="item-hero-img" loading="lazy">
+                </div>
+                <div class="item-hero-body">
+                    <p class="item-hero-en">Chicken Grill Set</p>
+                    <h2 class="item-hero-title">チキングリルセット</h2>
+                    <p class="item-hero-badge item-hero-badge--standard">定番メニュー</p>
+                    <p class="item-hero-desc">ジューシーなハーブチキンです。<br>サラダ・スープ・パン or ライス付き</p>
+                    <p class="item-hero-price"><span class="item-hero-price-num">1,250</span> 円<span class="item-hero-price-sub">（税込）</span></p>
+                </div>
             </section>
+
+            <!-- こだわり紹介 -->
+            <section class="item-story fade-in-up">
+                <h3 class="item-story-title">— このグリルへの、こだわり —</h3>
+                <div class="item-story-grid">
+                    <div class="item-story-card fade-in-up delay-1">
+                        <p class="item-story-card-icon">🌿</p>
+                        <h4 class="item-story-card-title">ハーブ漬けで引き出す旨み</h4>
+                        <p class="item-story-card-text">数種のハーブとオリーブオイルに一晩漬け込んだ鶏肉は、焼き上げると驚くほどジューシー。ハーブの香りが食欲をそそります。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-2">
+                        <p class="item-story-card-icon">🔥</p>
+                        <h4 class="item-story-card-title">直火で焼くグリルの香ばしさ</h4>
+                        <p class="item-story-card-text">強火で一気に表面を焼き固め、肉汁を閉じ込めます。直火ならではの焼き目と香ばしさが、シンプルな素材の持ち味を最大限に引き出します。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-3">
+                        <p class="item-story-card-icon">🫒</p>
+                        <h4 class="item-story-card-title">添え野菜もグリルで</h4>
+                        <p class="item-story-card-text">ズッキーニ・パプリカ・玉ねぎをチキンと同じグリルで焼き上げます。野菜の甘みが凝縮され、チキンとの相性も抜群です。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-4">
+                        <p class="item-story-card-icon">🍽️</p>
+                        <h4 class="item-story-card-title">パン or ライスが選べる</h4>
+                        <p class="item-story-card-text">ハーブの風味に合わせて、焼きたてパンかライスをお選びいただけます。どちらもグリルとよく合います。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アレルギー表 -->
+            <section class="item-allergy fade-in-up">
+                <h3 class="item-allergy-title">アレルギー情報</h3>
+                <table class="allergy-table">
+                    <thead>
+                        <tr>
+                            <th>メニュー</th>
+                            <th>小麦</th>
+                            <th>鶏肉</th>
+                            <th>卵</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>チキングリル</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>スープ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>サラダ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>パン</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="allergy-note">● 含む　― 含まない</p>
+                <p class="allergy-caution">※アレルギーがある方はスタッフにお申し付けください。</p>
+            </section>
+
+            <footer class="ft">
+                <nav class="ft-nav">
+                    <a href="../index.html">ホーム</a>
+                    <a href="../menu.html">メニュー</a>
+                    <a href="../access.html">アクセス</a>
+                    <a href="../reservation.html">予約</a>
+                </nav>
+                <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
+                <div class="ft-logo">
+                    <img src="../images/bottom_logo.png" alt="Harvest Restaurant">
+                </div>
+                <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
+            </footer>
         </main>
+        <script src="../script/items.js"></script>
     </body>
 </html>
