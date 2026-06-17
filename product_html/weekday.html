@@ -2,10 +2,8 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <!-- スマホでも画面を整える -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="../css/items.css">
-        <!-- 画像のファイル形式が 「png」の場合 -->
         <link rel="icon" href="../images/favicon.png" type="image/png">
         <title>Harvest Restaurant</title>
     </head>
@@ -39,6 +37,95 @@
                 <span> ＞ </span>
                 平日限定セット
             </p>
+
+            <!-- メインビジュアル（マック風横並び） -->
+            <section class="item-hero">
+                <div class="item-hero-img-wrap">
+                    <img src="../images/menu/Set_Menu/Limited_Set.png" alt="平日限定セット" class="item-hero-img" loading="lazy">
+                </div>
+                <div class="item-hero-body">
+                    <p class="item-hero-en">Weekday Set Menu</p>
+                    <h2 class="item-hero-title">平日限定セットメニュー</h2>
+                    <p class="item-hero-price"><span class="item-hero-price-num">1,000</span> 円<span class="item-hero-price-sub">（税込）</span></p>
+                    <div class="item-notice-box">
+                        <p class="item-notice-icon">🕐</p>
+                        <div>
+                            <p class="item-notice-title">ランチタイム限定のご提供です</p>
+                            <p class="item-notice-text">平日（月〜金・祝日を除く）の <strong>11:30〜13:30</strong> のみのご提供となります。<br>土・日・祝日はご注文いただけませんのでご了承ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- こだわり紹介 -->
+            <section class="item-story">
+                <h3 class="item-story-title">— このセットへの、こだわり —</h3>
+                <div class="item-story-grid">
+                    <div class="item-story-card">
+                        <p class="item-story-card-icon">🌿</p>
+                        <h4 class="item-story-card-title">その日の朝に仕入れた食材</h4>
+                        <p class="item-story-card-text">野菜は毎朝その日分だけを仕入れています。鮮度にこだわり、サラダのシャキシャキ感や素材本来の甘みをそのままお届けします。</p>
+                    </div>
+                    <div class="item-story-card">
+                        <p class="item-story-card-icon">🍖</p>
+                        <h4 class="item-story-card-title">週替わりの肉料理</h4>
+                        <p class="item-story-card-text">メインの肉料理は週ごとに変わります。シェフが旬の食材と向き合いながら、毎週新しい一皿をご用意。何度来ても飽きないのがこのセットの魅力です。</p>
+                    </div>
+                    <div class="item-story-card">
+                        <p class="item-story-card-icon">🍞</p>
+                        <h4 class="item-story-card-title">焼きたてのパン</h4>
+                        <p class="item-story-card-text">パンはランチの時間帯に合わせて焼き上げています。外はカリッと、中はふんわり。スープとの相性も抜群です。</p>
+                    </div>
+                    <div class="item-story-card">
+                        <p class="item-story-card-icon">💰</p>
+                        <h4 class="item-story-card-title">1,000円という価格へのこだわり</h4>
+                        <p class="item-story-card-text">「平日のランチだからこそ、無理なく通える価格で」という思いから1,000円（税込）に設定。品質を落とさず、毎日来ていただけるセットを目指しています。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アレルギー表 -->
+            <section class="item-allergy">
+                <h3 class="item-allergy-title">アレルギー情報</h3>
+                <table class="allergy-table">
+                    <thead>
+                        <tr>
+                            <th>メニュー</th>
+                            <th>小麦</th>
+                            <th>牛肉</th>
+                            <th>鶏肉</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>週替わり肉料理</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>コンソメスープ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>サラダ</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                        <tr>
+                            <td>パン</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="allergy-note">● 含む　― 含まない</p>
+                <p class="allergy-caution">※アレルギーがある方はスタッフにお申し付けください。</p>
+            </section>
 
             <footer class="ft">
                 <nav class="ft-nav">
