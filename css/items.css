@@ -253,7 +253,7 @@ main {
 }
 
 .item-hero-img-wrap {
-  flex: 1.1;
+  flex: 1.8;
   min-width: 0;
 }
 
@@ -308,6 +308,27 @@ main {
 .item-hero-price-sub {
   font-size: 13px;
   color: #999;
+}
+
+/* 人気バッジ */
+.item-hero-badge {
+  display: inline-block;
+  background: #2d4a2d;
+  color: #c8dbb0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin: 0 0 0.6rem;
+}
+
+/* 商品説明文 */
+.item-hero-desc {
+  font-size: 13px;
+  color: #5a4a30;
+  line-height: 1.8;
+  margin: 0 0 1rem;
 }
 
 .item-notice-box {
@@ -542,6 +563,36 @@ main {
 }
 
 /* ============================================
+   アレルギーなし表示
+   ============================================ */
+
+.allergy-empty {
+  text-align: center;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.allergy-empty-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.allergy-empty-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d4a2d;
+  margin: 0 0 0.4rem;
+}
+
+.allergy-empty-sub {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+
+
+/* ============================================
    fade-in-up アニメーション
    ============================================ */
 
@@ -604,6 +655,11 @@ main {
   }
   .allergy-table {
     width: 100%;   /* スマホは全幅 */
+  }
+
+  /* PCのみの改行をスマホで非表示 */
+  .br-pc {
+    display: none;
   }
 
   /* フッターナビを縦並びに */
