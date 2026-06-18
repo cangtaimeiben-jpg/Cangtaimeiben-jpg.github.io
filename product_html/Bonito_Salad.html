@@ -2,12 +2,8 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <!-- スマホでも画面を整える -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="../css/reset.css">
-        <link rel="stylesheet" href="../css/menu.css">
-
-        <!-- 画像のファイル形式が 「png」の場合 -->
+        <link rel="stylesheet" href="../css/items.css">
         <link rel="icon" href="../images/favicon.png" type="image/png">
         <title>Harvest Restaurant</title>
     </head>
@@ -39,8 +35,66 @@
                 <span> ＞ </span>
                 <a href="../menu.html">メニュー</a>
                 <span> ＞ </span>
-                平日限定セット
+                かつお香る和風サラダ
             </p>
+
+            <!-- メインビジュアル -->
+            <section class="item-hero fade-in-up">
+                <div class="item-hero-img-wrap">
+                    <img src="../images/menu/Salad/Bonito_Salad.png " alt="かつお香る和風サラダ" class="item-hero-img" loading="lazy">
+                </div>
+                <div class="item-hero-body">
+                    <p class="item-hero-en">Japanese Style Salad</p>
+                    <h2 class="item-hero-title">かつお香る和風サラダ</h2>
+                    <p class="item-hero-badge">サイドメニュー</p>
+                    <p class="item-hero-desc">女性に人気なサラダです。</p>
+                    <p class="item-hero-price"><span class="item-hero-price-num">380</span> 円<span class="item-hero-price-sub">（税込）</span></p>
+                </div>
+            </section>
+
+            <!-- アレルギー表 -->
+            <section class="item-allergy fade-in-up">
+                <h3 class="item-allergy-title">アレルギー情報</h3>
+                <table class="allergy-table">
+                    <thead>
+                        <tr>
+                            <th>メニュー</th>
+                            <th>小麦</th>
+                            <th>牛肉</th>
+                            <th>魚介類</th>
+                            <th>乳</th>
+                            <th>卵</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>かつお節</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-none">―</td>
+                            <td class="allergy-none">―</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="allergy-note">● 含む　― 含まない</p>
+                <p class="allergy-caution">※アレルギーがある方はスタッフにお申し付けください。</p>
+            </section>
+
+            <footer class="ft">
+                <nav class="ft-nav">
+                    <a href="../index.html">ホーム</a>
+                    <a href="../menu.html">メニュー</a>
+                    <a href="../access.html">アクセス</a>
+                    <a href="../reservation.html">予約</a>
+                </nav>
+                <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
+                <div class="ft-logo">
+                    <img src="../images/bottom_logo.png" alt="Harvest Restaurant">
+                </div>
+                <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
+            </footer>
         </main>
+        <script src="../script/items.js"></script>
     </body>
 </html>
