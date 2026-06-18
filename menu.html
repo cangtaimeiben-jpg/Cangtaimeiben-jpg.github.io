@@ -1,178 +1,556 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <!-- スマホでも画面を整える -->
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="css/menu.css">
-        <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
-        <!-- 画像のファイル形式が 「png」の場合 -->
-        <link rel="icon" href="images/favicon.png" type="image/png">
-        <title>Harvest Restaurant</title>
-    </head>
+/* ============================================
+   ヘッダー・ロゴ
+   ============================================ */
 
-    <body class="topPage">
-        <header>    
-            <h1 class="top_logo">
-                <img src="images/top_logo.png" alt="Harvest Restaurant">
-            </h1>
-            
-            <nav class="gMenu">
-                <input class="menu-btn" type="checkbox" id="menu-btn">
-                <label class="menu-icon" for="menu-btn">
-                    <span class="navicon"></span>
-                </label>
-                
-                <ul class="menu">
-                    <li><a href="index.html">ホーム</a></li>
-                    <li><a href="access.html">アクセス</a></li>
-                    <li><a href="reservation.html">予約</a></li>
-                </ul>
-            </nav>
-        </header>
+header {
+  background-image: url('../images/top_logo_background.png');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
 
-        <main>
-            <p class="breadcrumb">
-                <a href="index.html">ホーム</a>
-                <span> ＞ </span>
-                メニュー
-            </p>
-        
-            <!-- セットメニュー -->
-            <section class="menu-section">
-                <h2 class="section-title">SET MENU</h2>
-                <p class="section-subtitle">メイン・サラダ・スープ・パン or ライス付き</p>
+.top_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  text-align: center;
+  width: 100%;
+}
 
-                <!-- 平日限定バナー -->
-                <a href="product_html/weekday.html" class="weekday-banner fade-in-up" loading="lazy">
-                    <div class="weekday-banner-left">
-                        <span class="weekday-badge-corner">月曜日〜金曜日限定（祝日を除く）</span>
-                        <p class="weekday-banner-label"><br>Weekday Set Menu</p>
-                        <p class="weekday-banner-title">平日限定セットメニュー</p>
-                        <p class="weekday-banner-desc"><br>～平日だけの特別なセット。<br class="sp-only">ちょっと贅沢なランチタイムを。～</p>
-                        <div class="weekday-banner-price-row">
-                            <span class="weekday-banner-tag">　　価格　　</span>
-                            <span class="weekday-banner-price">1,000</span>
-                            <span class="weekday-banner-yen">円 <span class="menu-price-sub">（税込）</span></span>
-                        </div>
-                    
-                        <div class="weekday-banner-includes">
-                            <div class="weekday-include-item"><span class="icon">🥩</span>平日限定の<br>肉料理</div>
-                            <div class="weekday-include-item"><span class="icon">🍵</span>コンソメ<br>スープ</div>
-                            <div class="weekday-include-item"><span class="icon">🥗</span>サラダ</div>
-                            <div class="weekday-include-item"><span class="icon">🍞</span>パン<br>2切れ</div>
-                        </div>
-                    </div>
+.top_logo img {
+  display: block;
+  width: 300px;
+  height: 100px;
+  /* ロゴ画像の白背景を透過させる */
+  mix-blend-mode: multiply;
+}
 
-                    <div class="weekday-banner-right">
-                        <img src="images/menu/Set_Menu/Limited_Set.png" alt="平日限定セット" loading="lazy">
-                    </div>
-                </a>
 
-                <!-- セットメニューカード -->
-                <div class="menu-grid fade-in-up">
+/* ============================================
+   ハンバーガーメニュー
+   ============================================ */
 
-                    <!-- グラタンセット（人気No.1） -->
-                    <a href="product_html/gratin.html" class="menu-card top">
-                        <img src="images/menu/Set_Menu/Gratin_Set.png" alt="グラタンセット" class="menu-img" loading="lazy">
-                        <div class="menu-card-body">
-                            <span class="badge badge-popular">当店人気 No.1</span>
-                            <p class="menu-name">グラタンセット</p>
-                            <p class="menu-desc">当店自慢「人気No.1」のグラタンです。<br>サラダ・スープ・パン or ライス付き</p>
-                            <p class="menu-price">¥1,750　円 <span class="menu-price-sub">（税込）</span></p>
-                        </div>
-                    </a>
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
 
-                    <!-- ビーフシチューセット -->
-                    <a href="product_html/beef_stew.html" class="menu-card">
-                        <img src="images/menu/Set_Menu/Beef_Stew_Set.png" alt="ビーフシチューセット" class="menu-img" loading="lazy">
-                        <div class="menu-card-body">
-                            <span class="badge badge-standard">定番メニュー</span>
-                            <p class="menu-name">ビーフシチューセット</p>
-                            <p class="menu-desc">じっくり煮込んだ柔らかいビーフシチューです。<br>サラダ・スープ・パン or ライス付き</p>
-                            <p class="menu-price">¥1,250　円 <span class="menu-price-sub">（税込）</span></p>
-                        </div>
-                    </a>
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
 
-                    <!-- チキングリルセット -->
-                    <a href="product_html/chicken.html" class="menu-card">
-                        <img src="images/menu/Set_Menu/Grilled_Chicken_Set.png" alt="チキングリルセット" class="menu-img" loading="lazy">
-                        <div class="menu-card-body">
-                            <span class="badge badge-standard">定番メニュー</span>
-                            <p class="menu-name">チキングリルセット</p>
-                            <p class="menu-desc">ジューシーなハーブチキンです。<br>サラダ・スープ・パン or ライス付き</p>
-                            <p class="menu-price">¥1,250　円 <span class="menu-price-sub">（税込）</span></p>
-                        </div>
-                    </a>
-                </div>
-            </section>
+.gMenu .menu-icon .navicon {
+  background: #ffc107; 
+  display: block;
+  height: 2px; /* 太さ */
+  width: 31px; /* 長さ */
+  position: relative;
+  transition: background .4s ease-out; 
+}
 
-            <!-- 単品メニュー -->
-            <section class="menu-section">
-                <h2 class="section-title">SIDE MENU</h2>
-                <p class="section-subtitle">※セットメニューを注文したうえで、<br>お選びいただけます。</p>
-                
-                <!-- セットメニューカード -->
-                <div class="menu-grid fade-in-up">
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #ffc107; 
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out; 
+  width: 100%;
+}
 
-                    <!--「サラダ１」-->
-                    <a href="product_html/Bonito_Salad.html" class="menu-card featured">
-                        <img src="images/menu/Salad/Bonito_Salad.png" alt="かつお香る和風サラダ" class="menu-img" loading="lazy">
-                        <div class="menu-card-body">
-                            <span class="badge badge-popular">和風サラダ</span>
-                            <p class="menu-name">かつお香る和風サラダ</p>
-                            <p class="menu-desc">女性に人気なサラダです。</p>
-                            <p class="menu-price">¥380　円 <span class="menu-price-sub">（税込）</span></p>
-                        </div>
-                    </a>
+.gMenu .menu-icon .navicon::before {top: 10px;} 
+.gMenu .menu-icon .navicon::after {top: -10px;} 
 
-                    <!--「サラダ２」-->
-                    <a href="product_html/Mediterranean_Salad.html" class="menu-card featured">
-                        <img src="images/menu/Salad/Mediterranean_Salad.png" alt="地中海風サラダ" class="menu-img" loading="lazy">
-                        <div class="menu-card-body">
-                            <span class="badge badge-popular">洋風サラダ</span>
-                            <p class="menu-name">地中海風サラダ</p>
-                            <p class="menu-desc">当店新作のサラダです。</p>
-                            <p class="menu-price">¥380　円 <span class="menu-price-sub">（税込）</span></p>
-                        </div>
-                    </a>
-                </div>
-            </section>
+.gMenu .menu {
+  background-color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height .6s; 
+  text-align: center;
+  
+  /* ここから下の3行を追加 */
+  list-style: none;     /* 箇条書きの黒丸を消す */
+  padding: 0;           /* デフォルトの余白を消す */
+  margin: 0;            /* デフォルトの余白を消す */
+}
 
-            <!-- デザート -->
-            <section class="menu-section">
-                <h2 class="section-title">DESSERT</h2>
-                <p class="section-subtitle">食後にいかがでしょうか</p>
-                
-                <!-- セットメニューカード -->
-                <div class="menu-grid fade-in-up">
+.gMenu .menu li {
+  width: 100%;
+  text-align: center;   /* 文字を中央に揃える */
+}
 
-                    <!--「サラダ１」-->
-                    <a href="product_html/Bonito_Salad.html" class="menu-card featured">
-                        <img src="images/menu/dessert/strawberry.png" alt="期間限定　かき氷" class="menu-img" loading="lazy">
-                        <div class="menu-card-body">
-                            <span class="badge badge-popular">期間限定　9/20(日)まで</span>
-                            <p class="menu-name">かき氷</p>
-                            <p class="menu-desc">いちご、あんこ、抹茶<br>この中からお選びいただけます。</p>
-                            <p class="menu-price">¥750　円 <span class="menu-price-sub">（税込）</span></p>
-                        </div>
-                    </a>
-                </div>
-            </section>
-            <script src="script/menu.js"></script>
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
 
-            <footer class="ft">
-                <nav class="ft-nav">
-                    <a href="index.html">ホーム</a>
-                    <a href="access.html">アクセス</a>
-                    <a href="reservation.html">予約</a>
-                </nav>
-                <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
-                <div class="ft-logo">
-                    <img src="images/bottom_logo.png" alt="Harvest Restaurant">
-                </div>
-                <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
-            </footer>
-        </main>
-    </body>
-</html>
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;        /* 追加 */
+  color: #333333;         /* 追加 */
+  font-family: inherit;   /* 追加 */
+}
+
+.gMenu .menu li a:hover {
+  background-color: #f4f4f4;
+}
+
+.gMenu .menu-btn {
+  display: none;
+}
+
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px; 
+  transition: max-height .6s;
+}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(45deg);top: 0;}
+
+.gMenu .menu-icon {
+  top: 26px;
+}
+
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: #333333;
+}
+
+/* ============================================
+   メイン・パンくず
+   ============================================ */
+
+main {
+  padding-top: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  background-image: url('../images/back_ground.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.breadcrumb {
+  font-size: 20px;
+  color: #6b4c1e;
+  padding-left: 15px;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.7);
+}
+
+.breadcrumb a {
+  color: #4a3a2a;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #4a3a2a;
+}
+
+/* ============================================
+   セクションタイトル・サブタイトル
+   ============================================ */
+
+.menu-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'Righteous', 'Noto Sans JP', sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin: 2rem 0 0;
+  padding-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Righteous', 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  color: #1a1a1a;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin: 0 0 1.5rem;
+  padding-bottom: 15px;
+  border-bottom: 5px solid #c8dbb0;
+}
+
+/* ============================================
+   平日限定バナー
+   ============================================ */
+
+.weekday-banner {
+  display: flex;
+  align-items: stretch;
+  min-height: 160px;
+  background: #f5f0e8;
+  border: 1.5px solid #110e06;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 15px 1.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.weekday-banner-left {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weekday-badge-corner {
+  display: inline-block;
+  background: #2d4a2d;
+  color: #c8dbb0;
+  font-size: 15px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.weekday-banner-label {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #6b5a3e;
+  margin-bottom: 4px;
+}
+
+.weekday-banner-title {
+  font-size: 35px;
+  font-weight: 500;
+  color: #3a2e1e;
+  margin: 0 0 6px;
+}
+
+.weekday-banner-desc {
+  font-size: 13px;
+  color: #7a6a50;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.weekday-banner-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weekday-banner-tag {
+  background: #3C3419;
+  color: #FAC775;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.weekday-banner-price {
+  font-size: 28px;
+  font-weight: 500;
+  color: #3a2e1e;
+}
+
+.weekday-banner-yen {
+  font-size: 16px;
+  color: #7a6a50;
+}
+
+.weekday-banner-includes {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  border: 1.5px solid #e0e0e0;
+  padding: 12px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.weekday-include-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #7a6a50;
+  text-align: center;
+}
+
+.weekday-include-item .icon {
+  font-size: 22px;
+}
+
+.weekday-banner-right {
+  width: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.weekday-banner-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ============================================
+   スマホ対応（600px以下）― 平日限定バナーのみ
+   ============================================ */
+
+/* スマホのみ表示するbrタグ（デスクトップでは非表示） */
+br.sp-only { display: none; }
+
+@media (max-width: 600px) {
+
+  /* スマホのみbrを有効にする */
+  br.sp-only { display: inline; }
+
+  /* バナー全体：縦並び・画面幅に収める */
+  .weekday-banner {
+    flex-direction: column;
+    margin: 0 0 1.5rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  /* テキストエリア：幅を100%に */
+  .weekday-banner-left {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 画像エリア */
+  .weekday-banner-right {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  /* ①緑バッジ：2行に折り返す */
+  .weekday-badge-corner {
+    font-size: 12px;
+    white-space: normal;
+    word-break: keep-all;
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ②タイトル：フォントサイズを縮小して収める */
+  .weekday-banner-title {
+    font-size: 24px;
+  }
+
+  /* 価格行：崩れないようにする */
+  .weekday-banner-price-row {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  /* アイコン行：折り返し */
+  .weekday-banner-includes {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+
+/* ============================================
+   メニューカードグリッド
+   ============================================ */
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 0 15px 2.5rem;
+}
+
+.menu-card {
+  width: calc(33.333% - 1rem);
+  min-width: 200px;
+  max-width: 300px;
+  background: #f4f4f4;
+  border: 1.5px solid #0a0707;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menu-card.top {
+  border: 2px solid #0F6E56;
+}
+
+a.menu-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card-body {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.menu-card.featured .menu-card-body {
+  background-color: #fff5ee;
+}
+
+.menu-card.featured .menu-name,
+.menu-card.featured .menu-price {
+  color: #0a0707;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.badge-popular {
+  background: #D4AF37;
+  color: #0a0707;
+}
+
+.badge-standard {
+  background: #FFF3E0;
+  color: #0a0707;
+}
+
+.menu-name {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.menu-desc {
+  font-size: 12px;
+  color: #0a0707;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.menu-price {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu-price-sub {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+
+/* ============================================
+   フェードインアニメーション
+   ============================================ */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+
+.ft {
+  background: #111;
+  color: #ccc;
+  padding: 2.5rem 2rem 1.5rem;
+  background-attachment: fixed;
+}
+
+.ft-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid #333;
+  padding-bottom: 1.5rem;
+}
+
+.ft-nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+}
+
+.ft-nav a:hover { color: #fff; }
+
+.ft-address {
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.ft-logo img {
+  width: 200px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+
+.ft-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ft-logo-text {
+  font-size: 22px;
+  color: #e8d5a3;
+  letter-spacing: 0.15em;
+  font-weight: 400;
+}
+
+.ft-copy {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  border-top: 0.5px solid #2a2a2a;
+  padding-top: 1rem;
+}
