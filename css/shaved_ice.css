@@ -271,13 +271,15 @@ main {
   align-items: stretch;
   max-width: 960px;
   margin: 1rem auto 2rem;
-  padding: 0 1.5rem;
+  padding: 0;
   box-sizing: border-box;
   gap: 0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 40px rgba(0,180,216,0.2), 0 0 80px rgba(233,30,140,0.08);
   border: 1.5px solid rgba(244,162,97,0.4);
+  /* 左右に余白を持たせるためラッパー側で管理 */
+  width: calc(100% - 3rem);
 }
 
 .item-hero-img-wrap {
@@ -820,4 +822,69 @@ main {
   .kakigori-lineup {
     padding: 0 1rem;
   }
+}
+
+/* ============================================
+   カウントダウン
+   ============================================ */
+
+.matsuri-countdown {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1.5rem 3rem 1.25rem;
+  background: rgba(255, 209, 102, 0.06);
+  border: 1.5px solid rgba(255, 209, 102, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 0 32px rgba(255,209,102,0.12), inset 0 0 24px rgba(255,209,102,0.03);
+  text-align: center;
+}
+
+/* 1行目：あと○○日 */
+.matsuri-countdown-main {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.12em;
+  margin: 0 0 0.2rem;
+  line-height: 1.1;
+}
+
+.matsuri-countdown-main #js-countdown {
+  font-size: 88px;
+  font-weight: 900;
+  color: var(--matsuri-yellow);
+  text-shadow:
+    0 0 16px rgba(255,209,102,0.85),
+    0 0 40px rgba(255,209,102,0.4);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  margin: 0 0.1em;
+}
+
+/* 2行目：終了日（小さく目立たない） */
+.matsuri-countdown-date {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(168, 159, 208, 0.65);
+  letter-spacing: 0.08em;
+  margin: 0.4rem 0 0;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .matsuri-countdown { padding: 1.25rem 2rem 1rem; }
+  .matsuri-countdown-main { font-size: 18px; }
+  .matsuri-countdown-main #js-countdown { font-size: 64px; }
+  .matsuri-countdown-date { font-size: 11px; }
+}
+
+/* 販売終了表示 */
+.matsuri-sold-out {
+  font-size: 22px;
+  font-weight: 700;
+  color: #c62828;
+  letter-spacing: 0.12em;
+  margin: 0;
+  padding: 0.25rem 0;
 }
