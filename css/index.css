@@ -16,20 +16,15 @@ header {
 .top_logo {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0px;
-  text-align: center;
-  width: 100%;
+  margin: 0;
 }
 
 .top_logo img {
   display: block;
   width: 300px;
   height: 100px;
-  /* ロゴ画像の白背景を透過させる */
   mix-blend-mode: multiply;
 }
-
 
 /* ============================================
    ハンバーガーメニュー
@@ -135,6 +130,7 @@ header {
   background: #333333;
 }
 
+
 /* ============================================
    メイン・パンくず
    ============================================ */
@@ -152,13 +148,12 @@ main {
 
 .breadcrumb {
   font-size: 20px;
-  color: #6b4c1e;
+  color: #b58b3a;
   padding-left: 15px;
-  text-shadow: 0 1px 3px rgba(255,255,255,0.7);
 }
 
 .breadcrumb a {
-  color: #4a3a2a;
+  color: #777;
   text-decoration: none;
 }
 
@@ -167,329 +162,94 @@ main {
 }
 
 .breadcrumb span {
-  color: #4a3a2a;
+  color: #777;
 }
 
+
 /* ============================================
-   セクションタイトル・サブタイトル
+   画像スライダー
    ============================================ */
 
-.menu-section {
+.hero-slider {
+  position: relative;
+  width: 100%;
+  overflow: visible;
   margin-bottom: 3rem;
 }
 
-.section-title {
-  font-family: 'Righteous', 'Noto Sans JP', sans-serif;
-  font-size: 35px;
-  font-weight: 600;
-  color: #1a1a1a;
-  letter-spacing: 0.12em;
-  text-align: center;
-  margin: 2rem 0 0;
-  padding-bottom: 10px;
-}
-
-.section-subtitle {
-  font-family: 'Righteous', 'Noto Sans JP', sans-serif;
-  font-size: 15px;
-  color: #1a1a1a;
-  text-align: center;
-  letter-spacing: 0.08em;
-  margin: 0 0 1.5rem;
-  padding-bottom: 15px;
-  border-bottom: 5px solid #c8dbb0;
-}
-
-/* ============================================
-   平日限定バナー
-   ============================================ */
-
-.weekday-banner {
-  display: flex;
-  align-items: stretch;
-  min-height: 160px;
-  background: #f5f0e8;
-  border: 1.5px solid #110e06;
-  border-radius: 12px;
+.slider-window {
+  width: 80%;
   overflow: hidden;
-  margin: 0 15px 1.5rem;
-  text-decoration: none;
-  color: inherit;
+  margin: 0 auto;
+  position: relative;
 }
 
-.weekday-banner-left {
-  flex: 1;
-  padding: 1.5rem;
+.slider-track {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.weekday-badge-corner {
-  display: inline-block;
-  background: #2d4a2d;
-  color: #c8dbb0;
-  font-size: 15px;
-  padding: 3px 10px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.weekday-banner-label {
-  font-size: 20px;
-  letter-spacing: 0.1em;
-  color: #6b5a3e;
-  margin-bottom: 4px;
-}
-
-.weekday-banner-title {
-  font-size: 35px;
-  font-weight: 500;
-  color: #3a2e1e;
-  margin: 0 0 6px;
-}
-
-.weekday-banner-desc {
-  font-size: 13px;
-  color: #7a6a50;
-  margin: 0 0 1rem;
-  line-height: 1.6;
-}
-
-.weekday-banner-price-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.weekday-banner-tag {
-  background: #3C3419;
-  color: #FAC775;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 4px;
-}
-
-.weekday-banner-price {
-  font-size: 28px;
-  font-weight: 500;
-  color: #3a2e1e;
-}
-
-.weekday-banner-yen {
-  font-size: 16px;
-  color: #7a6a50;
-}
-
-.weekday-banner-includes {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  border: 1.5px solid #e0e0e0;
-  padding: 12px;
-  border-radius: 4px;
-  width: fit-content;
-}
-
-.weekday-include-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-  color: #7a6a50;
-  text-align: center;
-}
-
-.weekday-include-item .icon {
-  font-size: 22px;
-}
-
-.weekday-banner-right {
-  width: 50%;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.weekday-banner-right img {
   width: 100%;
-  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 40vw;
   object-fit: cover;
   object-position: center;
   display: block;
-}
-
-/* ============================================
-   スマホ対応（600px以下）― 平日限定バナーのみ
-   ============================================ */
-
-/* スマホのみ表示するbrタグ（デスクトップでは非表示） */
-br.sp-only { display: none; }
-
-@media (max-width: 600px) {
-
-  /* スマホのみbrを有効にする */
-  br.sp-only { display: inline; }
-
-  /* バナー全体：縦並び・画面幅に収める */
-  .weekday-banner {
-    flex-direction: column;
-    margin: 0 0 1.5rem;
-    border-radius: 8px;
-    box-sizing: border-box;
-  }
-
-  /* テキストエリア：幅を100%に */
-  .weekday-banner-left {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* 画像エリア */
-  .weekday-banner-right {
-    width: 100%;
-    height: 220px;
-    flex-shrink: 0;
-  }
-
-  /* ①緑バッジ：2行に折り返す */
-  .weekday-badge-corner {
-    font-size: 12px;
-    white-space: normal;
-    word-break: keep-all;
-    display: inline-block;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* ②タイトル：フォントサイズを縮小して収める */
-  .weekday-banner-title {
-    font-size: 24px;
-  }
-
-  /* 価格行：崩れないようにする */
-  .weekday-banner-price-row {
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
-  /* アイコン行：折り返し */
-  .weekday-banner-includes {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-}
-
-
-/* ============================================
-   メニューカードグリッド
-   ============================================ */
-
-.menu-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.25rem;
-  margin: 0 15px 2.5rem;
-}
-
-.menu-card {
-  width: calc(33.333% - 1rem);
-  min-width: 200px;
-  max-width: 300px;
-  background: #f4f4f4;
-  border: 1.5px solid #0a0707;
   border-radius: 12px;
-  overflow: hidden;
 }
 
-.menu-card.top {
-  border: 2px solid #0F6E56;
+/* 前へ・次へボタン */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  padding: 10px 16px;
+  cursor: pointer;
+  z-index: 10;
 }
 
-a.menu-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.menu-img {
+/* ドット */
+.dots {
+  position: absolute;
+  bottom: 12px;
   width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  display: block;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
-.menu-card-body {
-  padding: 0.75rem 1rem 1rem;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.menu-card.featured .menu-card-body {
-  background-color: #fff5ee;
+.dot.active {
+  background: #fff;
 }
 
-.menu-card.featured .menu-name,
-.menu-card.featured .menu-price {
-  color: #0a0707;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-bottom: 6px;
-}
-
-.badge-popular {
-  background: #D4AF37;
-  color: #0a0707;
-}
-
-.badge-standard {
-  background: #FFF3E0;
-  color: #0a0707;
-}
-
-.menu-name {
-  font-size: 15px;
-  font-weight: 500;
-  margin: 0 0 4px;
-}
-
-.menu-desc {
-  font-size: 12px;
-  color: #0a0707;
-  margin: 0 0 8px;
-  line-height: 1.5;
-}
-
-.menu-price {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.menu-price-sub {
-  font-size: 12px;
-  color: #888;
-  font-weight: 400;
-}
-
-
-/* ============================================
-   フェードインアニメーション
-   ============================================ */
-
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ============================================
    フッター
