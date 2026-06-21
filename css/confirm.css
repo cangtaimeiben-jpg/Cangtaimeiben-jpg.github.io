@@ -3,7 +3,7 @@
    ============================================ */
 
 header {
-  background-image: url('../images/top_logo_background.png');
+  background-image: url('../images/top_logo_background.jpg');
   background-size: cover;
   background-position: center;
   position: fixed;
@@ -140,7 +140,7 @@ main {
   padding-left: 0;
   padding-right: 0;
   margin: 0;
-  background-image: url('../images/back_ground.png');
+  background-image: url('../images/back_ground.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
