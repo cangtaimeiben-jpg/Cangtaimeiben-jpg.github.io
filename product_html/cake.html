@@ -3,9 +3,195 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="css/index.css">
-        <!--「タブ」の画像-->
-        <link rel="icon" href="images/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/cake.css">
+        <link rel="icon" href="../images/favicon.jpg" type="image/jpeg">
         <title>Harvest Restaurant</title>
     </head>
+
+    <body class="topPage">
+        <header>    
+            <h1 class="top_logo">
+                <img src="../images/top_logo.jpg" alt="Harvest Restaurant">
+            </h1>
+            
+            <nav class="gMenu">
+                <input class="menu-btn" type="checkbox" id="menu-btn">
+                <label class="menu-icon" for="menu-btn">
+                    <span class="navicon"></span>
+                </label>
+                
+                <ul class="menu">
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="../menu.html">メニュー</a></li>
+                    <li><a href="../access.html">アクセス</a></li>
+                    <li><a href="../reservation.html">予約</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <p class="breadcrumb">
+                <a href="../index.html">ホーム</a>
+                <span> ＞ </span>
+                <a href="../menu.html">メニュー</a>
+                <span> ＞ </span>
+                期間限定 季節のショートケーキ
+            </p>
+
+            <!-- フルーツバナー -->
+            <div class="matsuri-banner">
+                <div class="matsuri-countdown">
+                    <p class="matsuri-countdown-main">あと<span id="js-countdown">－－</span>日</p>
+                    <p class="matsuri-countdown-date" id="js-countdown-date">終了日：７月３１日（　）</p>
+                </div>
+            </div>
+
+            <!-- メインビジュアル -->
+            <section class="item-hero fade-in-up">
+                <div class="item-hero-img-wrap">
+                    <img src="../images/menu/dessert_take_out/cake_images_6.jpg" alt="季節のショートケーキ" class="item-hero-img" loading="lazy">
+                </div>
+                <div class="item-hero-body">
+                    <p class="item-hero-en">Seasonal Shortcake</p>
+                    <h2 class="item-hero-title">季節のショートケーキ</h2>
+                    <p class="item-hero-badge item-hero-badge--seasonal">🌸 期間限定 🌸</p>
+                    <p class="item-hero-desc">みずみずしい旬のフルーツをたっぷりサンドした、今だけの贅沢。ふわふわのスポンジと濃厚な生クリームが口の中でとろけます。</p>
+                    <p class="item-hero-price"><span class="item-hero-price-num">850</span> 円<span class="item-hero-price-sub">（税込）</span></p>
+                </div>
+            </section>
+
+            <!-- 3種ショートケーキラインナップ -->
+            <section class="kakigori-lineup fade-in-up">
+                <p class="kakigori-lineup-title">— ラインナップ —</p>
+                <div class="kakigori-cards">
+
+                    <!-- いちご -->
+                    <div class="kakigori-card">
+                        <div class="kakigori-card-img-wrap">
+                            <img src="../images/menu/dessert_take_out/cake_images_6.jpg" alt="いちごショートケーキ" class="kakigori-card-img" loading="lazy">
+                        </div>
+                        <div class="kakigori-card-body">
+                            <span class="kakigori-card-tag tag--strawberry">🍓 STRAWBERRY</span>
+                            <h4 class="kakigori-card-title">いちご</h4>
+                            <p class="kakigori-card-desc">完熟いちごをふんだんに挟んだ定番の一品。甘酸っぱいフレッシュいちごと濃厚生クリームの組み合わせは、何度食べても飽きません。</p>
+                            <p class="kakigori-card-price"><span class="kakigori-card-price-num">850</span> 円<span style="font-size:11px;color:#b08090;">（税込）</span></p>
+                        </div>
+                    </div>
+
+                    <!-- フルーツミックス -->
+                    <div class="kakigori-card">
+                        <div class="kakigori-card-img-wrap">
+                            <img src="../images/menu/dessert_take_out/Fruit_Mix.jpg" alt="フルーツミックスショートケーキ" class="kakigori-card-img" loading="lazy">
+                        </div>
+                        <div class="kakigori-card-body">
+                            <span class="kakigori-card-tag tag--seasonal">🍑 SEASONAL FRUITS</span>
+                            <h4 class="kakigori-card-title">旬のフルーツミックス</h4>
+                            <p class="kakigori-card-desc">いちご・ブルーベリー・メロン・桃など旬の果物を贅沢にサンド。彩り豊かな断面が美しく、食べる前から幸せな気持ちになれます。</p>
+                            <p class="kakigori-card-price"><span class="kakigori-card-price-num">850</span> 円<span style="font-size:11px;color:#b08090;">（税込）</span></p>
+                        </div>
+                    </div>
+
+                    <!-- プレミアム白桃 -->
+                    <div class="kakigori-card">
+                        <div class="kakigori-card-img-wrap">
+                            <img src="../images/menu/dessert_take_out/Peach_Short_cake.jpg" alt="白桃ショートケーキ" class="kakigori-card-img" loading="lazy">
+                        </div>
+                        <div class="kakigori-card-body">
+                            <span class="kakigori-card-tag tag--premium">🍑 PREMIUM PEACH</span>
+                            <h4 class="kakigori-card-title">プレミアム白桃</h4>
+                            <p class="kakigori-card-desc">国産白桃を丸ごと一切れのせた贅沢なショートケーキ。上品な甘みとほのかな香りが生クリームに溶け込み、特別なひとときを演出します。</p>
+                            <p class="kakigori-card-price"><span class="kakigori-card-price-num">850</span> 円<span style="font-size:11px;color:#b08090;">（税込）</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 装飾区切り -->
+            <div class="firework-row">✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦</div>
+
+            <!-- こだわり紹介 -->
+            <section class="item-story fade-in-up">
+                <h3 class="item-story-title">🍰 このショートケーキへの、こだわり 🍰</h3>
+                <div class="item-story-grid">
+                    <div class="item-story-card fade-in-up delay-1">
+                        <p class="item-story-card-icon">🍓</p>
+                        <h4 class="item-story-card-title">旬のフルーツを厳選</h4>
+                        <p class="item-story-card-text">その季節に最もおいしい果物を農家から直接仕入れています。完熟ならではのみずみずしさと自然な甘みは、冷凍・缶詰とはひと味違う感動があります。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-2">
+                        <p class="item-story-card-icon">🎂</p>
+                        <h4 class="item-story-card-title">ふわふわ自家製スポンジ</h4>
+                        <p class="item-story-card-text">毎朝店内で焼き上げる自家製スポンジは、卵と砂糖だけのシンプルな配合にこだわります。きめ細かくしっとりとした生地が、フルーツと生クリームを優しく包み込みます。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-3">
+                        <p class="item-story-card-icon">🥛</p>
+                        <h4 class="item-story-card-title">濃厚な北海道生クリーム</h4>
+                        <p class="item-story-card-text">北海道産の純生クリームを使用し、毎日手作業で仕上げています。適度なコクとふわりとした口どけが、フルーツの風味を最大限に引き立てます。</p>
+                    </div>
+                    <div class="item-story-card fade-in-up delay-4">
+                        <p class="item-story-card-icon">🎁</p>
+                        <h4 class="item-story-card-title">手土産・ギフトにも最適</h4>
+                        <p class="item-story-card-text">お持ち帰り用のボックスもご用意しています。大切な方へのプレゼントや手土産としてもご利用いただけます。ご要望があれば熨斗やリボンも対応いたします。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アレルギー表 -->
+            <section class="item-allergy fade-in-up">
+                <h3 class="item-allergy-title">アレルギー情報</h3>
+                <table class="allergy-table">
+                    <thead>
+                        <tr>
+                            <th>メニュー</th>
+                            <th>小麦</th>
+                            <th>卵</th>
+                            <th>乳</th>
+                            <th>果物</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>いちごショートケーキ</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                        </tr>
+                        <tr>
+                            <td>旬のフルーツミックス</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                        </tr>
+                        <tr>
+                            <td>プレミアム白桃</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                            <td class="allergy-contains">●</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="allergy-note">● 含む　― 含まない</p>
+                <p class="allergy-caution">※アレルギーがある方はスタッフにお申し付けください。</p>
+            </section>
+
+            <footer class="ft">
+                <nav class="ft-nav">
+                    <a href="../index.html">ホーム</a>
+                    <a href="../menu.html">メニュー</a>
+                    <a href="../access.html">アクセス</a>
+                    <a href="../reservation.html">予約</a>
+                </nav>
+                <p class="ft-address">住所 ： 〒150-〇〇〇〇 東京都渋谷区〇〇 〇〇-〇〇</p>
+                <div class="ft-logo">
+                    <img src="../images/top_logo.jpg" alt="Harvest Restaurant">
+                </div>
+                <p class="ft-copy">© 2025 Harvest Restaurant. All Rights Reserved.</p>
+            </footer>
+        </main>
+        <script src="../script/cake.js"></script>
+    </body>
 </html>
