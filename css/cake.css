@@ -1,0 +1,872 @@
+/* ============================================
+   ヘッダー・ロゴ（季節ケーキテーマ）
+   ============================================ */
+
+:root {
+  --cake-pink:    #e91e8c;
+  --cake-blue:    #00b4d8;
+  --cake-gold:    #f4a261;
+  --cake-cream:   #fff8f0;
+  --cake-peach:   #ffb347;
+  --cake-green:   #6abf69;
+  --cake-light:   #f9f4ef;
+  --cake-dark:    #2c1a4e;
+  --cake-deep:    #1a0f36;
+  --cake-sky:     #e0f7ff;
+  --cake-rose:    #fce4ec;
+  --cake-yellow:  #ffd166;
+}
+
+header {
+  background: linear-gradient(135deg, #f9eaf3 0%, #e8f5fd 50%, #f9eaf3 100%);
+  border-bottom: 3px solid var(--cake-pink);
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(233,30,140,0.15);
+}
+
+.top_logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.top_logo img {
+  display: block;
+  width: 300px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+
+/* ============================================
+   ハンバーガーメニュー
+   ============================================ */
+
+.gMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.gMenu .menu-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  padding-top: 5px;
+  height: 12px;
+}
+
+.gMenu .menu-icon .navicon {
+  background: var(--cake-pink);
+  display: block;
+  height: 2px;
+  width: 31px;
+  position: relative;
+  transition: background .4s ease-out;
+}
+
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: var(--cake-pink);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .4s ease-out;
+  width: 100%;
+}
+
+.gMenu .menu-icon .navicon::before { top: 10px; }
+.gMenu .menu-icon .navicon::after  { top: -10px; }
+
+.gMenu .menu {
+  background-color: rgba(249,234,243,0.97);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .6s;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(233,30,140,0.2);
+}
+
+.gMenu .menu li {
+  width: 100%;
+  text-align: center;
+}
+
+.gMenu .menu li:first-of-type {
+  padding-top: 50px;
+}
+
+.gMenu .menu li a {
+  display: block;
+  padding: 24px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #7a4060;
+  font-family: inherit;
+  letter-spacing: 0.08em;
+  transition: color 0.2s, background 0.2s;
+}
+
+.gMenu .menu li a:hover {
+  color: var(--cake-blue);
+  background-color: rgba(0,180,216,0.06);
+}
+
+.gMenu .menu-btn {
+  display: none;
+}
+
+.gMenu .menu-btn:checked ~ .menu {
+  max-height: 338px;
+  transition: max-height .6s;
+}
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon { background: transparent; }
+
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before { transform: rotate(-45deg); top: 0; }
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after  { transform: rotate(45deg); top: 0; }
+
+.gMenu .menu-icon { top: 26px; }
+
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+  background: var(--cake-pink);
+}
+
+/* ============================================
+   メイン・パンくず
+   ============================================ */
+
+main {
+  padding-top: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  background: linear-gradient(180deg, #fff8f4 0%, #fce4ec 25%, #e0f7ff 70%, #f9f4ef 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #9e6070;
+  padding-left: 15px;
+}
+
+.breadcrumb a {
+  color: var(--cake-blue);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.breadcrumb span { color: #bbb; }
+
+/* ============================================
+   季節バナー（ツバメ・フルーツ装飾）
+   ============================================ */
+
+.matsuri-banner {
+  text-align: center;
+  padding: 1.25rem 1rem 0.75rem;
+  position: relative;
+}
+
+.matsuri-banner::before {
+  content: '🍓  🫐  🍑  🍈  🍒  🍑  🍈  🫐  🍓';
+  display: block;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin-bottom: 0.6rem;
+  animation: fruit-bounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes fruit-bounce {
+  from { filter: brightness(0.9); transform: translateY(0); }
+  to   { filter: brightness(1.15); transform: translateY(-3px); }
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+
+.ft {
+  background: #fff0f6;
+  border-top: 2px solid var(--cake-pink);
+  color: #a07090;
+  padding: 2.5rem 2rem 1.5rem;
+}
+
+.ft-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.5px solid #f0c8db;
+  padding-bottom: 1.5rem;
+}
+
+.ft-nav a {
+  color: #c06080;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+
+.ft-nav a:hover { color: var(--cake-blue); }
+
+.ft-address {
+  text-align: center;
+  font-size: 15px;
+  color: #c08090;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.ft-logo img {
+  width: 200px;
+  height: auto;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+
+.ft-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ft-copy {
+  text-align: center;
+  font-size: 11px;
+  color: #c0a0b0;
+  border-top: 0.5px solid #f0c8db;
+  padding-top: 1rem;
+}
+
+/* ============================================
+   メインビジュアル（横並び）
+   ============================================ */
+
+.item-hero {
+  display: flex;
+  align-items: stretch;
+  max-width: 960px;
+  margin: 1rem auto 2rem;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(233,30,140,0.15), 0 0 80px rgba(0,180,216,0.08);
+  border: 1.5px solid rgba(233,30,140,0.35);
+  width: calc(100% - 3rem);
+}
+
+.item-hero-img-wrap {
+  flex: 1.8;
+  min-width: 0;
+}
+
+.item-hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.item-hero-body {
+  flex: 1;
+  min-width: 0;
+  background: linear-gradient(160deg, #fff8f4 0%, #fce4ec 100%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border-left: 1px solid rgba(233,30,140,0.2);
+}
+
+.item-hero-en {
+  font-size: 11px;
+  color: var(--cake-blue);
+  letter-spacing: 0.2em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.item-hero-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #3a1a2e;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--cake-pink);
+}
+
+.item-hero-price {
+  font-size: 15px;
+  color: #9e6070;
+  margin: 0 0 1rem;
+}
+
+.item-hero-price-num {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cake-pink);
+}
+
+.item-hero-price-sub {
+  font-size: 13px;
+  color: #b08090;
+}
+
+/* 人気バッジ */
+.item-hero-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  border-radius: 3px;
+  margin: 0 0 0.6rem;
+}
+
+.item-hero-badge--seasonal {
+  background: linear-gradient(90deg, var(--cake-pink), #ad1457);
+  color: #fff;
+  border: 1.5px solid #f48fb1;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(233,30,140,0.35);
+}
+
+/* 商品説明文 */
+.item-hero-desc {
+  font-size: 13px;
+  color: #7a4060;
+  line-height: 1.9;
+  margin: 0 0 1rem;
+}
+
+/* ============================================
+   お知らせボックス
+   ============================================ */
+
+.item-notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(233,30,140,0.06);
+  border-left: 4px solid var(--cake-pink);
+  border-radius: 0 8px 8px 0;
+  padding: 0.9rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.item-notice-icon {
+  font-size: 24px;
+  margin: 0;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.item-notice-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cake-pink);
+  margin: 0 0 6px;
+  letter-spacing: 0.03em;
+}
+
+.item-notice-text {
+  font-size: 13px;
+  color: #7a4060;
+  margin: 0;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .item-hero {
+    flex-direction: column;
+    padding: 0;
+    margin: 1rem;
+  }
+  .item-hero-img { height: 220px; }
+  .item-hero-body { padding: 1.25rem; }
+  .item-hero-title { font-size: 22px; }
+}
+
+/* ============================================
+   提供時間の注意ボックス
+   ============================================ */
+
+.item-notice {
+  margin: 1.5rem 15px;
+  background: rgba(233,30,140,0.05);
+  border-left: 5px solid var(--cake-pink);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 0 15px rgba(233,30,140,0.08);
+}
+
+.item-notice-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.item-notice-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cake-pink);
+  margin: 0 0 6px;
+}
+
+.item-notice-text {
+  font-size: 14px;
+  color: #7a4060;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ============================================
+   装飾区切り
+   ============================================ */
+
+.firework-row {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 8px;
+  color: var(--cake-pink);
+  margin: 0.25rem 0 1.5rem;
+  opacity: 0.5;
+}
+
+/* ============================================
+   こだわり紹介
+   ============================================ */
+
+.item-story {
+  margin: 0 15px 2.5rem;
+}
+
+.item-story-title {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  color: #ad1457;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.5rem;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--cake-pink);
+}
+
+.item-story-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.item-story-card {
+  background: linear-gradient(135deg, rgba(255,240,248,0.9) 0%, rgba(224,247,255,0.85) 100%);
+  border: 1px solid rgba(233,30,140,0.25);
+  border-radius: 10px;
+  padding: 1.25rem;
+  width: calc(50% - 0.5rem);
+  min-width: 240px;
+  max-width: 400px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.item-story-card:hover {
+  border-color: var(--cake-blue);
+  box-shadow: 0 0 20px rgba(0,180,216,0.15);
+}
+
+.item-story-card-icon {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.item-story-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ad1457;
+  margin: 0 0 8px;
+}
+
+.item-story-card-text {
+  font-size: 13px;
+  color: #7a4060;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================
+   アレルギー表
+   ============================================ */
+
+.item-allergy {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(252,228,236,0.7) 0%, rgba(224,247,255,0.8) 100%);
+  border: 1.5px solid rgba(233,30,140,0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(233,30,140,0.07);
+}
+
+.item-allergy-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ad1457;
+  margin: 0 0 1rem;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--cake-pink);
+  text-align: center;
+}
+
+.allergy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 0 auto 0.75rem;
+  border: 1.5px solid rgba(233,30,140,0.4);
+  text-align: center;
+}
+
+.allergy-table th {
+  background: rgba(252,228,236,0.95);
+  color: #ad1457;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid rgba(233,30,140,0.2);
+  letter-spacing: 0.05em;
+}
+
+.allergy-table th:first-child { text-align: center; }
+
+.allergy-table td {
+  padding: 10px 16px;
+  text-align: center;
+  color: #7a4060;
+  border: 1px solid rgba(233,30,140,0.15);
+}
+
+.allergy-table td:first-child {
+  text-align: center;
+  font-weight: 500;
+}
+
+.allergy-table tr:nth-child(even) td {
+  background: rgba(255,240,248,0.5);
+}
+
+.allergy-contains {
+  color: var(--cake-pink);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.allergy-none { color: #c0b0b8; }
+
+.allergy-note {
+  font-size: 12px;
+  color: #b09090;
+  margin: 0.5rem 0 0.25rem;
+  text-align: center;
+}
+
+.allergy-caution {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ad1457;
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+
+/* ============================================
+   アレルギーなし表示
+   ============================================ */
+
+.allergy-empty { text-align: center; padding: 1.25rem 0 0.5rem; }
+.allergy-empty-icon { font-size: 32px; display: block; margin-bottom: 0.5rem; }
+.allergy-empty-text { font-size: 15px; font-weight: 600; color: var(--cake-blue); margin: 0 0 0.4rem; }
+.allergy-empty-sub  { font-size: 13px; color: #b09090; margin: 0; }
+
+/* ============================================
+   fade-in-up アニメーション
+   ============================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+
+.fade-in-up.delay-1 { transition-delay: 0.1s; }
+.fade-in-up.delay-2 { transition-delay: 0.2s; }
+.fade-in-up.delay-3 { transition-delay: 0.3s; }
+.fade-in-up.delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================
+   スマホ対応
+   ============================================ */
+
+@media (max-width: 600px) {
+  .item-hero-img    { height: 240px; }
+  .item-hero-title  { font-size: 22px; }
+  .item-story-card  { width: 100%; max-width: 100%; }
+  .allergy-table    { width: 100%; }
+  .br-pc            { display: none; }
+
+  .ft-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .ft-nav a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid #f0c8db;
+  }
+
+  .ft-nav a:last-child { border-bottom: none; }
+}
+
+/* ============================================
+   3種ケーキカード
+   ============================================ */
+
+.kakigori-lineup {
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.kakigori-lineup-title {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #ad1457;
+  letter-spacing: 0.12em;
+  margin: 0 0 1.25rem;
+}
+
+.kakigori-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.kakigori-card {
+  flex: 1;
+  min-width: 0;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid rgba(233,30,140,0.28);
+  background: linear-gradient(160deg, rgba(255,240,248,0.9) 0%, rgba(224,247,255,0.85) 100%);
+  box-shadow: 0 4px 20px rgba(233,30,140,0.1);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: default;
+}
+
+.kakigori-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 32px rgba(0,180,216,0.18);
+  border-color: var(--cake-blue);
+}
+
+.kakigori-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.kakigori-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.kakigori-card:hover .kakigori-card-img {
+  transform: scale(1.05);
+}
+
+.kakigori-card-body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.kakigori-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3a1a2e;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.kakigori-card-desc {
+  font-size: 12px;
+  color: #7a4060;
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+
+.kakigori-card-price {
+  font-size: 13px;
+  color: #9e6070;
+}
+
+.kakigori-card-price-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cake-pink);
+}
+
+.kakigori-card-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+.tag--strawberry {
+  background: rgba(233,30,140,0.12);
+  color: #c2185b;
+  border: 1px solid rgba(233,30,140,0.4);
+}
+
+.tag--seasonal {
+  background: rgba(0,180,216,0.1);
+  color: #0077a8;
+  border: 1px solid rgba(0,180,216,0.4);
+}
+
+.tag--premium {
+  background: rgba(244,162,97,0.15);
+  color: #b56a2a;
+  border: 1px solid rgba(244,162,97,0.45);
+}
+
+@media (max-width: 640px) {
+  .kakigori-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .kakigori-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .kakigori-lineup {
+    padding: 0 1rem;
+  }
+}
+
+/* ============================================
+   カウントダウン
+   ============================================ */
+
+.matsuri-banner {
+  text-align: center;
+  padding: 1.25rem 1rem 0.75rem;
+}
+
+.matsuri-countdown {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1.5rem 3rem 1.25rem;
+  background: rgba(233,30,140,0.05);
+  border: 1.5px solid rgba(233,30,140,0.4);
+  border-radius: 16px;
+  box-shadow: 0 0 32px rgba(233,30,140,0.1), inset 0 0 24px rgba(233,30,140,0.03);
+  text-align: center;
+}
+
+.matsuri-countdown-main {
+  font-size: 22px;
+  font-weight: 600;
+  color: #7a2040;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.2rem;
+  line-height: 1.1;
+}
+
+.matsuri-countdown-main #js-countdown {
+  font-size: 88px;
+  font-weight: 900;
+  color: var(--cake-pink);
+  text-shadow:
+    0 0 16px rgba(233,30,140,0.6),
+    0 0 40px rgba(233,30,140,0.25);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  margin: 0 0.1em;
+}
+
+.matsuri-countdown-date {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(122,64,96,0.75);
+  letter-spacing: 0.08em;
+  margin: 0.4rem 0 0;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .matsuri-countdown { padding: 1.25rem 2rem 1rem; }
+  .matsuri-countdown-main { font-size: 18px; }
+  .matsuri-countdown-main #js-countdown { font-size: 64px; }
+  .matsuri-countdown-date { font-size: 11px; }
+}
+
+/* 販売終了表示 */
+.matsuri-sold-out {
+  font-size: 22px;
+  font-weight: 700;
+  color: #b0bec5;
+  letter-spacing: 0.12em;
+  margin: 0;
+  padding: 0.25rem 0;
+}
